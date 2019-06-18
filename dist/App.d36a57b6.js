@@ -25748,29 +25748,45 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"App.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"Pet.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Pets = function Pets(props) {
+  return _react.default.createElement("div", null, _react.default.createElement("h1", null, props.name), _react.default.createElement("h2", null, props.animal), _react.default.createElement("h2", null, props.breed));
+};
+
+var _default = Pets;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = require("react-dom");
 
+var _Pet = _interopRequireDefault(require("./Pet"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Pet = function Pet(props) {
-  return _react.default.createElement("div", {}, [_react.default.createElement("h1", {}, props.name), _react.default.createElement("h2", {}, props.animal), _react.default.createElement("h2", {}, props.breed)]);
-};
-
 var App = function App() {
-  return _react.default.createElement("div", {}, [_react.default.createElement("h1", {}, "Adopt Me!"), _react.default.createElement(Pet, {
+  return _react.default.createElement("div", {}, [_react.default.createElement("h1", {}, "Adopt Me!"), _react.default.createElement(_Pet.default, {
     name: "Luna",
     animal: "Dog",
     breed: "Havanese"
-  }), _react.default.createElement(Pet, {
+  }), _react.default.createElement(_Pet.default, {
     name: "Pepper",
     animal: "Bird",
     breed: "Cockatiel"
-  }), _react.default.createElement(Pet, {
+  }), _react.default.createElement(_Pet.default, {
     name: "Doink",
     animal: "Cat",
     breed: "Mix"
@@ -25778,7 +25794,7 @@ var App = function App() {
 };
 
 (0, _reactDom.render)(_react.default.createElement(App), document.getElementById("root"));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./Pet":"Pet.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -25806,7 +25822,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64287" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64693" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
