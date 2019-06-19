@@ -4,6 +4,8 @@ import { ANIMALS } from "@frontendmasters/pet";
 const SearchParams = () => {
   const [location, setLocation] = useState("Seattle, WA");
   const [animal, setAnimal] = useState("dog");
+  const [breed, setBreed] = useState("");
+  const [breeds, setBreeds] = useState([]);
 
   return (
     <div className="search-params">
@@ -33,6 +35,24 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
+        <label htmlFor="breed">
+          breed
+          <select
+            id="breed"
+            value={breed}
+            onChange={e => e.target.value}
+            onBlur={e => e.target.value}
+            disabled={breeds.length === 0}
+          >
+            <option>All</option>
+            {breeds.map(breed => (
+              <option key={breed} value={breed}>
+                {breed}
+              </option>
+            ))}
+          </select>
+        </label>
+
         <button>Submit</button>
       </form>
     </div>
