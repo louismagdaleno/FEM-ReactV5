@@ -27479,7 +27479,8 @@ var SearchParams = function SearchParams() {
     }
   }, _pet.ANIMALS.map(function (animal) {
     return _react.default.createElement("option", {
-      value: animal
+      value: animal,
+      key: animal
     }, animal);
   }))), _react.default.createElement("button", null, "Submit")));
 };

@@ -27,7 +27,9 @@ const SearchParams = () => {
             onBlur={e => setAnimal(e.target.value)}
           >
             {ANIMALS.map(animal => (
-              <option value={animal}>{animal}</option>
+              <option value={animal} key={animal}>
+                {animal}
+              </option>
             ))}
           </select>
         </label>
